@@ -5,15 +5,29 @@ import mario from "../../assets/mario.gif";
 import { useState } from "react";
 
 function Jogo() {
+
   //Criamos o estado 'estaPulando' com valor padrao 'false'
   const [estaPulando, setEstaPulando] = useState(false);
 
   document.onkeydown = function () {
-    console.log("On Key Down");
+    //console.log("On Key Down");
 
-    estaPulando = true;
+    setEstaPulando(true);
+    
+    //700ms = 0.7s
+    setTimeout(function () {
+      //Voltamos o estado para o valor inicial
+      setEstaPulando(false);
+    }, 700);
+    
   };
 
+  let marioClassName = "mario";
+
+  if (estaPulando){
+    marioClassName = "mario mario-pulo";
+  }
+  
   console.log (15, { estaPulando });
 
   //jsx
@@ -23,7 +37,7 @@ function Jogo() {
 
       <img className="cano" src={cano} alt="Cano" />
 
-      <img className="mario" src={mario} alt="Mario" />
+      <img className={marioClassName} src={mario} alt="Mario" />
 
       <div className="chao"></div>
     </div>
