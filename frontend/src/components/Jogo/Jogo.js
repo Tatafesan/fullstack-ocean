@@ -8,9 +8,9 @@ function Jogo() {
     <div className="jogo">
       <img className="nuvens" src={nuvens} alt="Nuvens" />
 
-      <img className="cano" src={nuvens} alt="Cano" />
+      <img className="cano" src={cano} alt="Cano" />
 
-      <img className="mario" src={nuvens} alt="Mario" />
+      <img className="mario" src={mario} alt="Mario" />
 
       <div className="chao"></div>
     </div>
